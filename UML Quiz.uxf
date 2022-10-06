@@ -1,0 +1,71 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>8</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>248</x><y>136</y><w>168</w><h>88</h></coordinates><panel_attributes>actualite
+--
+_id_actualite : int_
+act_titre : varchar(200)
+act_contenu : varchar(500)
+act_date : date
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>800</x><y>392</y><w>168</w><h>56</h></coordinates><panel_attributes>question
+--
+_qst_id : int_
+qst_ordre : int
+qst_intitule_question : varchar(200)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>696</x><y>136</y><w>168</w><h>80</h></coordinates><panel_attributes>match
+--
+_id_match: int_
+date_debut : date
+date_fin : date
+code_match : char(8)
+match_corrige : char(1)
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>136</y><w>168</w><h>56</h></coordinates><panel_attributes>quiz
+--
+_quiz_id : int_
+quiz_illustration : varchar(200)
+quiz_etat : char(1)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>32</x><y>136</y><w>168</w><h>80</h></coordinates><panel_attributes>profil
+--
+_pfl_id : int_
+nom : varchar(60)
+prenom : varchar(60)
+mail : varchar(100)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>32</x><y>384</y><w>168</w><h>80</h></coordinates><panel_attributes>compte 
+--
+_cpt_id: int_
+cpt_pseudo : varchar(20)
+cpt_mdp : char(64)
+cpt_role : char(1)
+cpt_etat : char(1)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>192</x><y>184</y><w>352</w><h>256</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1..1
+</panel_attributes><additional_attributes>420;10;410;290;10;290</additional_attributes></element><element><id>Relation</id><coordinates><x>192</x><y>216</y><w>152</w><h>208</h></coordinates><panel_attributes>lt=-
+m1=0..*
+m2=1..1
+</panel_attributes><additional_attributes>160;10;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>88</x><y>208</y><w>40</w><h>192</h></coordinates><panel_attributes>lt=-
+m1=1..1
+m2=1..1
+</panel_attributes><additional_attributes>10;10;10;220</additional_attributes></element><element><id>UMLClass</id><coordinates><x>992</x><y>136</y><w>168</w><h>56</h></coordinates><panel_attributes>joueur
+--
+_id_joueur : int_
+pseudo_joueur : varchar(20)
+score : decimal(5,2)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>808</x><y>536</y><w>168</w><h>56</h></coordinates><panel_attributes>reponse
+--
+_id_reponse : int_
+texte_reponse : varchar(200)
+bonne_reponse : varchar(200)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>872</x><y>440</y><w>40</w><h>112</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=2..4</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>856</x><y>152</y><w>152</w><h>40</h></coordinates><panel_attributes>lt=-
+m2=1
+m1=*
+</panel_attributes><additional_attributes>170;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>568</x><y>184</y><w>248</w><h>256</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+</panel_attributes><additional_attributes>20;10;10;290;290;290</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>144</y><w>112</w><h>40</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1
+</panel_attributes><additional_attributes>120;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>0</x><y>88</y><w>824</w><h>384</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1</panel_attributes><additional_attributes>1000;60;1000;10;10;10;10;450;40;450</additional_attributes></element></diagram>
