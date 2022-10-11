@@ -39,8 +39,7 @@ CREATE TABLE IF NOT EXISTS `zal3-zamilab00_2`.`t_profil_pfl` (
   `pfl_nom` VARCHAR(60) NULL,
   `pfl_prenom` VARCHAR(60) NULL,
   `pfl_mail` VARCHAR(60) NULL,
-  `cpt_pseudo` VARCHAR(20) NOT NULL,
-  `cpt_id` INT NOT NULL,
+  `cpt_id` INT NOT NULL UNIQUE,
   PRIMARY KEY (`pfl_profil_id`),
   INDEX `fk_t_profil_pfl_t_compte_cpt1_idx` (`cpt_id` ASC),
   CONSTRAINT `fk_t_profil_pfl_t_compte_cpt1`
@@ -191,3 +190,43 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+INSERT INTO `t_compte_cpt`( `cpt_pseudo`, `cpt_mdp`, `cpt_role`, `cpt_etat`) 
+VALUES ('responsable','resp22_ZUIQ','A','A'),
+('abdelaziz','test','A','D'),
+('meurlet','testeuse','A','D'),
+('christophe','chris_GAR','F','D'),
+('milian','mil_ME','F','D');
+
+INSERT INTO `t_profil_pfl`(`pfl_nom`, `pfl_prenom`, `pfl_mail`, `cpt_id`) 
+VALUES ('responsable','resp','resp@mail.com','1'),
+('amil','abdelaziz','abdel@mail.com','2'),
+('meurlet','louane','louane@mail.com','3'),
+('garcia','christophe','christophe@mail.com','4'),
+('lemeur','milian','milian@mail.com','5');
+
+INSERT INTO `t_quiz_qui`(`qui_illustration`, `cpt_id`, `qui_etat`) 
+VALUES ('images/quiz1','4','A'),
+VALUES ('images/quiz2','5','A');
+
+INSERT INTO `t_match_mat`(`mat_date_debut`, `mat_date_fin`, `mat_code`, `qui_id`, `cpt_id`, `mat_corrige`) 
+VALUES (CURRENT_DATE,CURRENT_TIME,'12345678','1','4','D'),
+(CURRENT_DATE,CURRENT_TIME,'27367651','1','4','A'),
+(CURRENT_DATE,CURRENT_TIME,'87427682','2','5','D');
+
+INSERT INTO `t_joueur_jou`(`jou_pseudo`, `mat_id`, `score`) 
+VALUES ('zayreus','1','0'),
+('okad','1','0'),
+('keii','2','0'),
+('cahuete','2','0');
+
+INSERT INTO `t_question_qst`(`qst_id`, `qst_odre`, `qst_intitule_question`, `quiz_id`) 
+VALUES ('1','A quelle marque correspond cette marque?','1'),
+('2','En quelle année ce logo a été créé ?','1'),
+('3','que represente ce logo ?','1');
+
+INSERT INTO `t_reponse_rep`(`rep_texte_reponse`, `rep_bonne_reponse`, `qst_id`) 
+VALUES ('[value-2]','[value-3]','1'),
+('[value-2]','[value-3]','1'),
+('[value-2]','[value-3]','1'),
